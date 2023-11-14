@@ -71,3 +71,207 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+
+## Documentation
+
+### Base Url 
+```
+http://localhost:4000/v1
+```
+
+### Resource 
+- users
+- products
+
+
+### Enpoint and Response
+#### POST ```users/```
+Request body 
+```
+multipart/form-data
+{
+    "name": "string",
+    "role": "admin | manager | kasir",
+    "photo": "image"
+}
+```
+Response
+```
+{
+    "data": {
+        "id": "number",
+        "name": "string",
+        "role": "admin | manager | kasir",
+        "photo": "string url"
+    },
+    "msg": "string",
+}
+```
+#### GET ```users/```
+query
+- ```?page={number of page}```
+- ```?limit={many data will be get, default 25}```
+
+Response 
+```
+{
+    "data": [
+        {
+            "id": "number",
+            "name": "string",
+            "role": "admin | manager | kasir",
+            "photo": "string url"
+        }
+    ],
+    "msg": "string",
+}
+```
+#### GET ```users/{id}```
+Response
+```
+{
+    "data": {
+        "id": "number",
+        "name": "string",
+        "role": "admin | manager | kasir",
+        "photo": "string url"
+    },
+    "msg": "string",
+}
+```
+#### PUT ```users/{id}```
+Request body 
+```
+multipart/form-data
+{
+    "name": "string",                   | optional
+    "role": "admin | manager | kasir",  | optional
+    "photo": "image"                    | optional
+}               
+```
+
+Response
+```
+{
+    "data": {
+        "id": "number",
+        "name": "string",
+        "role": "admin | manager | kasir",
+        "photo": "string url"
+    },
+    "msg": "string",
+}
+```
+#### DELETE ```users/{id}```
+Response
+```
+{
+    "data": {
+        "id": "number",
+        "name": "string",
+        "role": "admin | manager | kasir",
+        "photo": "string url"
+    },
+    "msg": "string",
+}
+```
+---
+#### POST ```products/```
+Request body 
+```
+application/json
+
+{
+    "name": "string",
+    "price": "number",
+    "stock": "number",
+    "img_product": "image url"
+}
+```
+Response
+```
+{
+    "data": {
+        "id": "number"
+        "name": "string",
+        "price": "number",
+        "stock": "number",
+        "img_product": "image url"
+    },
+    "msg": "string",
+}
+```
+#### GET ```products/```
+query
+- ```?page={number of page}```
+- ```?limit={many data will be get, default 25}```
+
+Response 
+```
+{
+    "data": [
+        {
+           "id": "number"
+            "name": "string",
+            "price": "number",
+            "stock": "number",
+            "img_product": "image url"
+        }
+    ],
+    "msg": "string",
+}
+```
+#### GET ```products/{id}```
+Response
+```
+{
+    "data": {
+        "id": "number"
+        "name": "string",
+        "price": "number",
+        "stock": "number",
+        "img_product": "image url"
+    },
+    "msg": "string",
+}
+```
+#### PUT ```products/{id}```
+Request body 
+```
+multipart/form-data
+{
+    "name": "string",   | optional
+    "price": "number",  | optional
+    "stock": "number"   | optional
+    "photo": "image"    | optional
+}               
+```
+
+Response
+```
+{
+    "data": {
+        "id": "number"
+        "name": "string",
+        "price": "number",
+        "stock": "number",
+        "img_product": "image url"
+    },
+    "msg": "string",
+}
+```
+#### DELETE ```products/{id}```
+Response
+```
+{
+    "data": {
+        "id": "number"
+        "name": "string",
+        "price": "number",
+        "stock": "number",
+        "img_product": "image url"
+    },
+    "msg": "string",
+}
+```
